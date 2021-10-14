@@ -1,0 +1,105 @@
+.testimonials {
+  position: relative;
+  padding: 40px 0;
+  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: $red-color;
+  z-index: 10;
+
+  &__carousel {
+    max-width: 1200px;
+    width: 100%;
+
+    .slick-track {
+      display: flex;
+
+      .slick-slide {
+        display: flex;
+        height: auto;
+        align-items: center; //optional
+        justify-content: center; //optional
+      }
+    }
+
+    @include respond-to(sm) {
+      width: 80%;
+    }
+
+    @include respond-to(md) {
+      width: 70%;
+    }
+
+    @include respond-to(lg) {
+      width: 100%;
+    }
+  }
+
+  &__item {
+    padding: 0 40px;
+    outline: none;
+
+    blockquote {
+      font-size: 2rem;
+      line-height: 1.5;
+      color: #fff;
+      font-family: $text-font-stack;
+      text-align: center;
+    }
+
+    footer {
+      margin-top: 30px;
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 1.2rem;
+      font-weight: 500;
+      letter-spacing: 1.44px;
+      line-height: 17px;
+      text-transform: uppercase;
+
+      cite {
+        font-style: normal;
+      }
+
+      span {
+        display: block;
+      }
+    }
+
+    @include respond-to(sm) {
+      blockquote {
+        font-size: 3rem;
+      }
+
+      footer {
+        margin-top: 50px;
+        font-size: 1.5rem;
+
+        span {
+          display: inline-block;
+
+          &:not(:last-child) {
+            &::after {
+              text-indent: 5px;
+              display: inline-block;
+              content: '-';
+            }
+          }
+        }
+      }
+    }
+
+    @include respond-to(lg) {
+      blockquote {
+        font-size: 4rem;
+      }
+    }
+  }
+
+  // .arrows {
+  //   .slick-arrow {
+  //     width: 50vw;
+  //   }
+  // }
+}

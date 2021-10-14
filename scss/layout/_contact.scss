@@ -1,0 +1,263 @@
+.contact {
+  padding-top: 150px;
+  padding-bottom: 150px;
+  display: flex;
+  align-items: center;
+
+  @include respond-to(sm) {
+    min-height: calc(100vh - 35px);
+  }
+
+  @include respond-to(md) {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+
+  @include respond-to(md) {
+    padding-top: 250px;
+  }
+
+  .heading-lg {
+    margin-bottom: 120px;
+
+    @include respond-to(sm) {
+      margin-bottom: 150px;
+      font-size: 4.8rem;
+      font-weight: 500;
+    }
+  }
+
+  &__inner {
+    @include respond-to(md) {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__col {
+    .heading-sm {
+      font-weight: bold;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+      display: block;
+      @include respond-to(sm) {
+        font-size: 2.5rem;
+      }
+    }
+    &:first-child {
+      margin-bottom: 90px;
+
+      li {
+        position: relative;
+        display: flex;
+        align-items: center;
+        font-weight: 400;
+        margin-bottom: 90px;
+
+        @include respond-to(sm) {
+          font-size: 6rem;
+          margin-bottom: 120px;
+        }
+        @include respond-to(md) {
+          margin-top: 26px;
+        }
+
+        &:before {
+          content: "Email";
+          text-transform: uppercase;
+          position: absolute;
+          font-size: 1.8rem;
+          top: -2.3rem;
+          left: 0;
+          font-weight: 600;
+          @include respond-to(sm) {
+            font-size: 2.5rem;
+            top: -3rem;
+          }
+        }
+
+        &:not(:last-child) {
+          &:before {
+            content: "Call";
+          }
+        }
+      }
+    }
+
+    p {
+      @extend .heading-md;
+      font-weight: 400;
+
+      a {
+        @extend .link;
+
+      }
+    }
+
+    a {
+      color: inherit;
+      transition: none;
+    }
+
+    @include respond-to(xl) {
+      &:last-child {
+        width: 30%;
+      }
+    }
+
+    @include respond-to(xxl) {
+      &:last-child {
+        width: 50%;
+      }
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 55px;
+    height: 55px;
+    display: block;
+
+    @include respond-to(sm) {
+      width: 80px;
+      height: 80px;
+    }
+
+    @include respond-to(md) {
+      width: 110px;
+      height: 110px;
+    }
+
+    img {
+      position: absolute;
+    }
+
+    &--phone {
+      &::before {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        border-right: 50px solid $light-blue;
+        border-top: 30px solid transparent;
+        border-bottom: 30px solid transparent;
+        transform-origin: bottom right;
+        transform: translateY(-50%) rotate(-11deg);
+        content: '';
+      }
+
+      img {
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 42px;
+      }
+
+      @include respond-to(sm) {
+        &::before {
+          border-right: 75px solid $light-blue;
+          border-top: 45px solid transparent;
+          border-bottom: 45px solid transparent;
+        }
+
+        img {
+          width: 63px;
+        }
+      }
+
+      @include respond-to(md) {
+        &::before {
+          border-right: 100px solid $light-blue;
+          border-top: 60px solid transparent;
+          border-bottom: 60px solid transparent;
+        }
+
+        img {
+          width: 84px;
+        }
+      }
+    }
+
+    &--email {
+      border-radius: 50%;
+      background-color: $red-color-2;
+
+      img {
+        top: 0;
+        left: 50%;
+        width: 33px;
+        transform: translateX(-50%);
+      }
+
+      @include respond-to(sm) {
+        img {
+          width: 50px;
+        }
+      }
+
+      @include respond-to(md) {
+        img {
+          width: 66px;
+        }
+      }
+    }
+  }
+
+  &__icon-img {
+    &--light {
+      display: none;
+    }
+
+    @include when-inside('.theme-dark') {
+      &--light {
+        display: block;
+      }
+
+      &--dark {
+        display: none;
+      }
+    }
+  }
+
+  &__social {
+    margin-top: 90px;
+
+    @include respond-to(sm) {
+      margin-top: 120px;
+    }
+
+    @include respond-to(md) {
+      margin-top: 85px;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    li {
+      font-weight: 400;
+      &:not(:last-child) {
+        margin-bottom: 5px;
+      }
+    }
+
+    a {
+      transition: none;
+      @extend .link;
+
+      span {
+        display: inline-block;
+        transition: transform 0.3s ease-in;
+      }
+
+      &:hover,
+      &:focus {
+        span {
+          transform: translateX(5px);
+        }
+      }
+    }
+  }
+}

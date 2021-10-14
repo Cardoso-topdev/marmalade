@@ -1,0 +1,80 @@
+.copy-block {
+  // margin-bottom: 60px;
+  max-width: 900px;
+  color: $text-color;
+
+  @include when-inside('.project--reverse') {
+    color: $dark-color;
+  }
+
+  // @include respond-to(sm) {
+  //   margin-bottom: 100px;
+  // }
+
+  // @include respond-to(md) {
+  //   margin-bottom: 130px;
+  // }
+
+  // @include respond-to(lg) {
+  //   margin-bottom: 180px;
+  // }
+
+  &:first-of-type {
+    margin-top: 60px;
+
+    @include respond-to(sm) {
+      margin-top: 100px;
+    }
+
+    @include respond-to(md) {
+      margin-top: 130px;
+    }
+
+    @include respond-to(lg) {
+      margin-top: 180px;
+    }
+  }
+
+  h2 {
+    @extend .heading--md;
+  }
+
+  p {
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+
+  blockquote {
+    margin-left: auto;
+    margin-right: auto;
+    @extend .heading--sm;
+    text-align: center;
+    max-width: 500px;
+
+    &:not(:last-child) {
+      margin-bottom: 50px;
+
+      @include respond-to(sm) {
+        margin-bottom: 100px;
+      }
+    }
+
+    &:not(:first-child) {
+      margin-top: 50px;
+
+      @include respond-to(sm) {
+        margin-top: 100px;
+      }
+    }
+  }
+
+  > * {
+    opacity: 0;
+    transition: opacity 1s ease-in;
+
+    &.is-visible {
+      opacity: 1;
+    }
+  }
+}

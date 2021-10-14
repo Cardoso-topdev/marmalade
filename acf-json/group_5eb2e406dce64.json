@@ -1,0 +1,775 @@
+{
+    "key": "group_5eb2e406dce64",
+    "title": "Post Fields",
+    "fields": [
+        {
+            "key": "field_5eb2e406e9e7c",
+            "label": "Project Reverse",
+            "name": "project_reverse",
+            "type": "true_false",
+            "instructions": "Do you want to reverse page color?",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_5eb2e406ecc93",
+            "label": "Flexible Content",
+            "name": "flexible_content",
+            "type": "flexible_content",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layouts": {
+                "layout_5d568a61144f2": {
+                    "key": "layout_5d568a61144f2",
+                    "name": "gallery",
+                    "label": "Gallery Section",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5eb2e406eeecd",
+                            "label": "Images",
+                            "name": "images",
+                            "type": "repeater",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "collapsed": "",
+                            "min": 0,
+                            "max": 0,
+                            "layout": "table",
+                            "button_label": "",
+                            "sub_fields": [
+                                {
+                                    "key": "field_5eb2e406f0617",
+                                    "label": "Mobile Image",
+                                    "name": "mobile_image",
+                                    "type": "image",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "return_format": "array",
+                                    "preview_size": "medium",
+                                    "library": "all",
+                                    "min_width": "",
+                                    "min_height": "",
+                                    "min_size": "",
+                                    "max_width": "",
+                                    "max_height": "",
+                                    "max_size": "",
+                                    "mime_types": ""
+                                },
+                                {
+                                    "key": "field_5eb2e406f061d",
+                                    "label": "Desktop Image",
+                                    "name": "desktop_image",
+                                    "type": "image",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "return_format": "array",
+                                    "preview_size": "medium",
+                                    "library": "all",
+                                    "min_width": "",
+                                    "min_height": "",
+                                    "min_size": "",
+                                    "max_width": "",
+                                    "max_height": "",
+                                    "max_size": "",
+                                    "mime_types": ""
+                                }
+                            ]
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_5d568acb24c6d": {
+                    "key": "layout_5d568acb24c6d",
+                    "name": "intro",
+                    "label": "Intro Section",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5eb2e4070120e",
+                            "label": "Intro Text",
+                            "name": "intro_text",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_5d568b0924c6f": {
+                    "key": "layout_5d568b0924c6f",
+                    "name": "video",
+                    "label": "Video Section",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5eb2e40702d41",
+                            "label": "Video Type",
+                            "name": "video_type",
+                            "type": "true_false",
+                            "instructions": "Do you want to load video file which will be set to Autoplay?",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "ui": 1,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
+                        },
+                        {
+                            "key": "field_5eb2e40704622",
+                            "label": "Video URL",
+                            "name": "video_url",
+                            "type": "text",
+                            "instructions": "For Vimeo - https:\/\/player.vimeo.com\/video\/*********",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_5dd6d5e5e8423",
+                                        "operator": "!=",
+                                        "value": "1"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_5eb2e407061d7",
+                            "label": "Video",
+                            "name": "video",
+                            "type": "file",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_5dd6d5e5e8423",
+                                        "operator": "==",
+                                        "value": "1"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "url",
+                            "library": "all",
+                            "min_size": "",
+                            "max_size": "",
+                            "mime_types": ""
+                        },
+                        {
+                            "key": "field_5eb2e40707bb4",
+                            "label": "Autoplay",
+                            "name": "autoplay",
+                            "type": "true_false",
+                            "instructions": "Do you want to autoplay Vimeo video?",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_5dd6d5e5e8423",
+                                        "operator": "!=",
+                                        "value": "1"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "ui": 1,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
+                        },
+                        {
+                            "key": "field_5eb2e4070940d",
+                            "label": "Background Color",
+                            "name": "background_color",
+                            "type": "color_picker",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_5d56983272652": {
+                    "key": "layout_5d56983272652",
+                    "name": "image",
+                    "label": "Image Section",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5eb2e4070ae2f",
+                            "label": "Image",
+                            "name": "image",
+                            "type": "image",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array",
+                            "preview_size": "medium",
+                            "library": "all",
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": "",
+                            "mime_types": ""
+                        },
+                        {
+                            "key": "field_5eb2e4070c5da",
+                            "label": "Displacement",
+                            "name": "displacement",
+                            "type": "true_false",
+                            "instructions": "Do you want to add Displacement Filter to Image?",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "ui": 1,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_5d56985572654": {
+                    "key": "layout_5d56985572654",
+                    "name": "two_image",
+                    "label": "Two-image Section",
+                    "display": "table",
+                    "sub_fields": [
+                        {
+                            "key": "field_5eb2e4070e124",
+                            "label": "Block Type",
+                            "name": "block_type",
+                            "type": "radio",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "1": "1",
+                                "2": "2",
+                                "3": "3"
+                            },
+                            "allow_null": 0,
+                            "other_choice": 0,
+                            "default_value": "",
+                            "layout": "vertical",
+                            "return_format": "value",
+                            "save_other_choice": 0
+                        },
+                        {
+                            "key": "field_5eb2e4070f7a3",
+                            "label": "Image 1",
+                            "name": "image_1",
+                            "type": "image",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array",
+                            "preview_size": "medium",
+                            "library": "all",
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": "",
+                            "mime_types": ""
+                        },
+                        {
+                            "key": "field_5eb2e40710f78",
+                            "label": "Displacement 1",
+                            "name": "displacement_1",
+                            "type": "true_false",
+                            "instructions": "Do you want to add Displacement Filter to Image?",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "ui": 1,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
+                        },
+                        {
+                            "key": "field_5eb2e4071285a",
+                            "label": "Image 2",
+                            "name": "image_2",
+                            "type": "image",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array",
+                            "preview_size": "medium",
+                            "library": "all",
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": "",
+                            "mime_types": ""
+                        },
+                        {
+                            "key": "field_5eb2e40714042",
+                            "label": "Displacement 2",
+                            "name": "displacement_2",
+                            "type": "true_false",
+                            "instructions": "Do you want to add Displacement Filter to Image?",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "ui": 1,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_5d569bb4e9052": {
+                    "key": "layout_5d569bb4e9052",
+                    "name": "text",
+                    "label": "Text Section",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5eb2e40715aa6",
+                            "label": "Text",
+                            "name": "text",
+                            "type": "textarea",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "maxlength": "",
+                            "rows": 4,
+                            "new_lines": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_5d569bd7e9054": {
+                    "key": "layout_5d569bd7e9054",
+                    "name": "website",
+                    "label": "Website Section",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5eb2e407172f3",
+                            "label": "Background Color",
+                            "name": "background_color",
+                            "type": "color_picker",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": ""
+                        },
+                        {
+                            "key": "field_5eb2e407189fa",
+                            "label": "Website Screenshot",
+                            "name": "website_screenshot",
+                            "type": "image",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array",
+                            "preview_size": "medium",
+                            "library": "all",
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": "",
+                            "mime_types": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_5d569cc2e9056": {
+                    "key": "layout_5d569cc2e9056",
+                    "name": "mockups",
+                    "label": "Mockups Section",
+                    "display": "table",
+                    "sub_fields": [
+                        {
+                            "key": "field_5eb2e4071a2f1",
+                            "label": "Mockup 1",
+                            "name": "mockup_1",
+                            "type": "image",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "url",
+                            "preview_size": "medium",
+                            "library": "all",
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": "",
+                            "mime_types": ""
+                        },
+                        {
+                            "key": "field_5eb2e4071b993",
+                            "label": "Mockup 2",
+                            "name": "mockup_2",
+                            "type": "image",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "url",
+                            "preview_size": "medium",
+                            "library": "all",
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": "",
+                            "mime_types": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_5dd6dc62fcf9d": {
+                    "key": "layout_5dd6dc62fcf9d",
+                    "name": "three_images_section",
+                    "label": "Three Images Section",
+                    "display": "table",
+                    "sub_fields": [
+                        {
+                            "key": "field_5eb2e4071d0ff",
+                            "label": "Image 1",
+                            "name": "image_1",
+                            "type": "image",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array",
+                            "preview_size": "medium",
+                            "library": "all",
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": "",
+                            "mime_types": ""
+                        },
+                        {
+                            "key": "field_5eb2e4071e84d",
+                            "label": "Displacement 1",
+                            "name": "displacement_1",
+                            "type": "true_false",
+                            "instructions": "Do you want to add Displacement Filter to Image?",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "ui": 1,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
+                        },
+                        {
+                            "key": "field_5eb2e4071fe40",
+                            "label": "Image 2",
+                            "name": "image_2",
+                            "type": "image",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array",
+                            "preview_size": "medium",
+                            "library": "all",
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": "",
+                            "mime_types": ""
+                        },
+                        {
+                            "key": "field_5eb2e40721408",
+                            "label": "Displacement 2",
+                            "name": "displacement_2",
+                            "type": "true_false",
+                            "instructions": "Do you want to add Displacement Filter to Image?",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "ui": 1,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
+                        },
+                        {
+                            "key": "field_5eb2e407229cc",
+                            "label": "Image 3",
+                            "name": "image_3",
+                            "type": "image",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array",
+                            "preview_size": "medium",
+                            "library": "all",
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": "",
+                            "mime_types": ""
+                        },
+                        {
+                            "key": "field_5eb2e4072408c",
+                            "label": "Displacement 3",
+                            "name": "displacement_3",
+                            "type": "true_false",
+                            "instructions": "Do you want to add Displacement Filter to Image?",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "ui": 1,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_5eb2ef4bb4470": {
+                    "key": "layout_5eb2ef4bb4470",
+                    "name": "copy_block",
+                    "label": "Copy Block",
+                    "display": "table",
+                    "sub_fields": [
+                        {
+                            "key": "field_5eb2ef52b4471",
+                            "label": "Copy",
+                            "name": "copy",
+                            "type": "wysiwyg",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "tabs": "all",
+                            "toolbar": "full",
+                            "media_upload": 0,
+                            "delay": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                }
+            },
+            "button_label": "Add Section",
+            "min": "",
+            "max": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "the_content"
+    ],
+    "active": 1,
+    "description": "",
+    "modified": 1588784988
+}

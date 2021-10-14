@@ -1,0 +1,31 @@
+.hamburger {
+  position: relative;
+  z-index: 50;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  outline: none;
+  font-size: 0;
+  background-color: transparent;
+  border-bottom: 32px solid #000;
+  border-left: 16px solid transparent;
+  border-right: 16px solid transparent;
+  @include transition;
+  cursor: pointer;
+
+  @include when-inside('.theme-dark') {
+    border-bottom: 32px solid #fff;
+  }
+
+  @include respond-to(sm) {
+    display: none;
+  }
+
+  @include when-inside('.page-header.is-opened') {
+    border-left: 0 solid transparent;
+    border-right: 0 solid transparent;
+  }
+}

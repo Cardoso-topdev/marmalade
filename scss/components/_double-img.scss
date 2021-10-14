@@ -1,0 +1,38 @@
+.double-img {
+  margin-bottom: 45px;
+
+  @include respond-to(sm) {
+    margin-bottom: 100px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  @include respond-to(md) {
+    margin-bottom: 130px;
+  }
+
+  @include respond-to(lg) {
+    margin-bottom: 180px;
+  }
+
+  &__col {
+    &:first-child {
+      margin-bottom: 50px;
+    }
+
+    @include respond-to(sm) {
+      width: calc(50% - 15px);
+
+      &:last-child {
+        margin-top: 17vw;
+      }
+    }
+
+    @include respond-to(md) {
+      width: calc(50% - 30px);
+    }
+  }
+  img {
+    width: 100%;
+  }
+}

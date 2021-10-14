@@ -1,0 +1,89 @@
+.login {
+  display: flex;
+  justify-content: center;
+  background-color: #f44545;
+  font-family: 'Canela Web', 'Helvetica Neue Light', 'Helvetica Neue',
+    'Helvetica', 'Arial', sans-serif;
+}
+
+.login #login {
+  padding: 0;
+}
+
+#login h1 a,
+.login h1 a {
+  background-image: url('../img/logo.svg');
+  height: 40px;
+  width: 120px;
+  background-size: 120px auto;
+  background-repeat: no-repeat;
+}
+
+#loginform,
+#lostpasswordform {
+  background-color: #f9f7f2;
+  border-radius: 10px;
+}
+
+#loginform input[type='text'],
+#loginform input[type='password'],
+#lostpasswordform input[type='text'],
+#lostpasswordform input[type='password'] {
+  padding: 14px 13px;
+  width: 100%;
+  color: #000;
+  font-family: 'Canela Web', 'Helvetica Neue Light', 'Helvetica Neue',
+    'Helvetica', 'Arial', sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.38;
+  border-radius: 10px;
+  border: 2px solid #979797;
+  background-color: #ffffff;
+  outline: none;
+}
+
+#loginform label {
+  color: rgba(0, 0, 0, 0.85);
+}
+
+#loginform input::placeholder {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+#loginform input:focus {
+  outline: none;
+  border: 2px solid #5e3127;
+  box-shadow: none;
+}
+
+#login input[type='submit'] {
+  height: auto;
+  display: block;
+  min-height: 0;
+  color: #f44545;
+  font-family: 'Canela Web', 'Helvetica Neue Light', 'Helvetica Neue',
+    'Helvetica', 'Arial', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 0.05rem;
+  text-transform: uppercase;
+  background-color: transparent;
+  border: 2px solid #f44545;
+  border-radius: 0;
+  outline: none;
+  text-shadow: none;
+  box-shadow: none;
+  cursor: pointer;
+}
+
+#login input[type='submit']:hover,
+#login input[type='submit']:focus {
+  background-color: #f44545;
+  color: #fff;
+}
+
+#login #nav a,
+#login #backtoblog a {
+  color: #f9f7f2;
+}

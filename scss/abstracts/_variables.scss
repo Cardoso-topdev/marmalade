@@ -1,0 +1,79 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass variables.
+// -----------------------------------------------------------------------------
+
+/// Heading font family
+/// @type List
+$heading-font-stack: 'Canela Web', 'Helvetica Neue Light', 'Helvetica Neue',
+  'Helvetica', 'Arial', sans-serif !default;
+
+/// Regular font family
+/// @type List
+$text-font-stack: 'Basis Grotesque', 'Helvetica Neue Light', 'Helvetica Neue',
+  'Helvetica', 'Arial', sans-serif !default;
+
+/// Copy text color
+/// @type Color
+$text-color: #fff !default;
+
+/// Red color
+/// @type Color
+$red-color: #f44545 !default;
+
+/// Red color
+/// @type Color
+$red-color-2: #f24f4f !default;
+
+/// Green color
+/// @type Color
+$green-color: #489f93 !default;
+
+/// Medium grey
+/// @type Color
+$mid-grey: rgba(255, 255, 255, 0.35) !default;
+
+/// Dark grey
+/// @type Color
+$dark-grey: rgba(110, 110, 110, 0.5) !default;
+
+/// Dark grey
+/// @type Color
+$dark-color: #131413 !default;
+
+/// Dark img bg
+/// @type Color
+$dark-img-bg: #1a1715 !default;
+
+/// Light img bg
+/// @type Color
+$light-img-bg: rgb(248, 248, 248) !default;
+
+/// Container's maximum width
+/// @type Length
+$max-width: 1550px !default;
+
+/// Breakpoints map
+/// @prop {String} keys - Keys are identifiers mapped to a given length
+/// @prop {Map} values - Values are actual breakpoints expressed in pixels
+$breakpoints: (
+  'sm': only screen and
+    (
+      min-width: 768px
+    ),
+  'md': only screen and
+    (
+      min-width: 1024px
+    ),
+  'lg': only screen and
+    (
+      min-width: 1280px
+    ),
+  'xl': only screen and
+    (
+      min-width: 1440px
+    ),
+  'xxl': only screen and
+    (
+      min-width: 1920px
+    )
+) !default;

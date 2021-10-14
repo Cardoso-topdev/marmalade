@@ -1,0 +1,286 @@
+.intro {
+  position: relative;
+  z-index: 5;
+  padding-bottom: 200px;
+  background: $dark-color;
+  overflow: hidden;
+
+  @include respond-to(sm) {
+    padding-bottom: 320px;
+  }
+
+  &__text-wrap {
+    position: relative;
+    padding-left: 20px;
+    padding-right: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
+    text-align: center;
+
+    @include respond-to(sm) {
+      padding-top: 200px;
+      padding-bottom: 330px;
+      max-width: 750px;
+      height: auto;
+    }
+
+    @include respond-to(lg) {
+      max-width: 940px;
+    }
+
+    .scroll-btn {
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-family: $text-font-stack;
+      color: #fff;
+
+      svg {
+        margin-top: 15px;
+      }
+    }
+  }
+
+  &__projects {
+    margin: 0 auto;
+    // padding: 0 20px;
+    // max-width: 820px;
+    &:not(:last-child) {
+      margin-bottom: 100px;
+    }
+
+    @include respond-to(sm) {
+      width: 85%;
+      &:not(:last-child) {
+        margin-bottom: 320px;
+      }
+    }
+
+    @include respond-to(md) {
+      width: 60%;
+      max-width: $max-width;
+    }
+
+    @include respond-to(xxl) {
+      width: 40%;
+    }
+  }
+
+  &__project {
+    &:not(:last-of-type) {
+      margin-bottom: 150px;
+
+      @include respond-to(sm) {
+        margin-bottom: 250px;
+      }
+    }
+  }
+
+  &__details {
+    margin: 0 auto;
+    padding: 0 35px;
+
+    .heading--md {
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+      max-width: 820px;
+    }
+
+    @include respond-to(sm) {
+      padding: 0 20px;
+    }
+
+    @include respond-to(md) {
+      padding: 0;
+    }
+  }
+
+  &__carousel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+
+    .slick-list,
+    .slick-track {
+      height: 100%;
+    }
+
+    @include when-inside('.is-touch') {
+      display: block;
+    }
+  }
+
+  &__slide {
+    position: relative;
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      font-family: 'object-fit:cover;';
+    }
+  }
+
+  &__canvas-wrap {
+    position: relative;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    width: 100%;
+
+    &::before {
+      padding-top: 66.66%;
+      display: block;
+      content: '';
+    }
+
+    a {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 3;
+      display: block;
+    }
+
+    canvas {
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      display: block;
+
+      @include respond-to(lg) {
+        pointer-events: all;
+      }
+    }
+
+    @include when-inside('.is-touch') {
+      canvas {
+        display: none;
+      }
+    }
+  }
+
+  &__meta {
+    margin-bottom: 45px;
+    display: flex;
+    align-items: center;
+
+    @include respond-to(sm) {
+      margin-bottom: 80px;
+    }
+  }
+
+  &__name {
+    margin-right: 12px;
+    color: #ffffff;
+    font-size: 1.8rem;
+    font-weight: 400;
+    white-space: nowrap;
+
+    @include respond-to(sm) {
+      margin-right: 20px;
+      font-size: 2.2rem;
+    }
+  }
+
+  &__cat-btn {
+    position: absolute;
+    top: 0;
+    z-index: 5;
+    transform: translateY(-50%);
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    // @include transition;
+
+    &:hover,
+    &:focus {
+      transition: none;
+    }
+  }
+
+  &__cat {
+    position: relative;
+    width: 100%;
+    background: #fff;
+    height: 1px;
+    flex-grow: 1;
+
+    @include respond-to(sm) {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      height: auto;
+      background: none;
+      &::before {
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        height: 1px;
+        display: block;
+        background: #fff;
+        content: '';
+      }
+    }
+
+    svg {
+      fill: #fff;
+
+      &:not(:last-child) {
+        margin-right: 20px;
+      }
+
+      @include respond-to(sm) {
+        position: static;
+        transform: none;
+      }
+    }
+
+    &--events {
+      width: 27px;
+      height: 25px;
+
+      @include respond-to(sm) {
+        width: 33px;
+        height: 31px;
+      }
+    }
+    &--identity {
+      width: 25px;
+      height: 25px;
+      @include respond-to(sm) {
+        width: 32px;
+        height: 32px;
+      }
+    }
+    &--packaging {
+      width: 24px;
+      height: 24px;
+
+      @include respond-to(sm) {
+        width: 30px;
+        height: 30px;
+      }
+    }
+  }
+}

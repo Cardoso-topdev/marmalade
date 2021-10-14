@@ -1,0 +1,131 @@
+.info {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  padding-top: 62px;
+  padding-bottom: 100px;
+  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
+  background: #fff;
+  z-index: 150;
+  transition: all 1s cubic-bezier(0.77, 0, 0.175, 1);
+  transform: translateY(-100%);
+
+  @include respond-to(sm) {
+    padding: 80px 35px;
+    padding-bottom: 120px;
+    height: 80vh;
+    height: calc(var(--vh, 1vh) * 80);
+  }
+  @include respond-to(md) {
+    padding-bottom: 160px;
+    display: flex;
+    align-items: center;
+  }
+
+  &.is-opened {
+    transform: translateY(0);
+  }
+
+  &__close {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    display: block;
+    fill: $dark-color;
+    background: none;
+    outline: none;
+    border: none;
+    @include transition;
+    transform: translateX(-50%);
+    cursor: pointer;
+
+    @include when-inside('.info.is-opened') {
+      transform: translateX(-50%) rotate(180deg);
+    }
+
+    @include respond-to(sm) {
+      top: auto;
+      bottom: 50px;
+
+      @include when-inside('.info.is-opened') {
+        transform: translateX(-50%) rotate(180deg);
+      }
+    }
+    @include respond-to(md) {
+      bottom: 70px;
+    }
+  }
+
+  &__container {
+    position: relative;
+    padding-top: 75px;
+    padding-right: 35px;
+    padding-left: 35px;
+    max-height: 100%;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h2 {
+      margin-bottom: 35px;
+      color: $dark-color;
+      font-family: $text-font-stack;
+      font-size: 4rem;
+      font-weight: 500;
+      text-align: center;
+    }
+
+    @include respond-to(sm) {
+      position: static;
+      margin: 0 auto;
+      max-width: $max-width;
+      align-items: flex-start;
+
+      h2 {
+        margin-bottom: 70px;
+      }
+    }
+  }
+
+  &__text-wrap {
+    color: $dark-color;
+    text-align: center;
+
+    ul {
+      list-style: none;
+      font-size: 1.8rem;
+    }
+
+    @include respond-to(sm) {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      text-align: left;
+      font-size: 2rem;
+
+      ul {
+        font-size: 2.2rem;
+      }
+
+      li {
+        &:not(:last-child) {
+          margin-bottom: 5px;
+        }
+      }
+    }
+  }
+
+  &__col {
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
+
+    @include respond-to(sm) {
+      width: 46%;
+    }
+  }
+}

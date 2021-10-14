@@ -1,0 +1,221 @@
+.work {
+  position: relative;
+  z-index: 5;
+  min-height: calc(100vh - 150px - 136px);
+  min-height: calc(var(--vh, 1vh) * 100 - 150px - 136px);
+  background-color: #fff;
+
+  &__grid {
+    margin: 0 auto;
+    padding-top: 40px;
+    display: flex;
+    flex-direction: column;
+    max-width: $max-width;
+
+    @include respond-to(sm) {
+      padding: 0 20px;
+      // padding-bottom: 17%;
+      flex-direction: row;
+      justify-content: space-between;
+      flex-wrap: wrap;
+
+      &--sort {
+        // padding-bottom: 0;
+        padding-top: 80px;
+      }
+    }
+    @include respond-to(md) {
+      // padding-bottom: 170px;
+      &--sort {
+        // padding-bottom: 0;
+        padding-top: 80px;
+      }
+    }
+
+    @include respond-to(lg) {
+      padding-left: 50px;
+      padding-right: 50px;
+      max-width: none;
+    }
+
+    &--filtered {
+      display: none;
+    }
+
+    &--current {
+      display: flex;
+    }
+  }
+
+  &__item {
+    margin-bottom: 60px;
+    width: 100%;
+
+    text-align: center;
+    opacity: 0;
+    transform: translateY(40px);
+    // will-change: transform;
+    transition: 0.5s ease-in;
+    // transition: all 1s cubic-bezier(0.59, 0.01, 0.28, 1);
+
+    &--filtered {
+      display: none;
+    }
+
+    &--current {
+      display: flex;
+    }
+
+    &.is-visible {
+      transform: none;
+      opacity: 1;
+    }
+
+    @include respond-to(sm) {
+      margin-bottom: 20%;
+      &:nth-child(9n + 1) {
+        margin-top: 80px;
+        width: 50%;
+      }
+      &:nth-child(9n + 2) {
+        width: 33%;
+        margin-right: 10%;
+      }
+      &:nth-child(9n + 3) {
+        margin-top: 11%;
+        width: 32%;
+      }
+      &:nth-child(9n + 4) {
+        width: 65%;
+      }
+      &:nth-child(9n + 5) {
+        width: 50%;
+      }
+      &:nth-child(9n + 6) {
+        margin-top: 13%;
+        margin-right: 10%;
+        width: 32%;
+      }
+      &:nth-child(9n + 7) {
+        margin-left: auto;
+        margin-right: 20%;
+        width: 50%;
+      }
+      &:nth-child(9n + 8) {
+        margin-top: 10%;
+        margin-left: 10%;
+        width: 32%;
+      }
+      &:nth-child(9n + 9) {
+        width: 50%;
+        margin-top: 10%;
+      }
+
+      @include when-inside('.work__grid--sort') {
+        margin: 0;
+        margin-bottom: 60px;
+        width: calc((100% - 35px) / 2);
+      }
+    }
+
+    @include respond-to(xl) {
+      margin-bottom: 10%;
+
+      &:nth-child(9n + 4) {
+        width: 55%;
+      }
+    }
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__title {
+    margin-bottom: 5px;
+    font-size: 3rem;
+    font-weight: 400;
+    line-height: 1.36;
+    font-family: $heading-font-stack;
+    color: $dark-color;
+
+    @include respond-to(md) {
+      margin-bottom: 25px;
+      font-size: 3.9rem;
+      line-height: 1;
+    }
+  }
+
+  &__img {
+    position: relative;
+    margin-bottom: 15px;
+    display: block;
+    width: 100%;
+
+    @include respond-to(sm) {
+      margin-bottom: 20px;
+    }
+
+    &::before {
+      padding-top: 66.66%;
+      display: block;
+      content: '';
+    }
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 3;
+      pointer-events: none;
+
+      @include respond-to(md) {
+        pointer-events: all;
+      }
+    }
+
+    @include when-inside('.is-touch') {
+      canvas {
+        display: none;
+      }
+    }
+  }
+
+  &__meta {
+    display: flex;
+    align-items: center;
+
+    .medium--upper {
+      color: $dark-grey;
+
+      &:not(:last-child) {
+        &::after {
+          margin: 0 5px;
+          display: inline-block;
+          content: '-';
+        }
+      }
+
+      @include on-event {
+        color: $dark-color;
+      }
+
+      @include respond-to(sm) {
+        font-size: 1.5rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,61 @@
+@font-face {
+  font-family: "Canela Web";
+  src: url("../fonts/Canela-Regular-Web.woff2") format("woff2"),
+    url("../fonts/Canela-Regular-Web.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Basis Grotesque";
+  src: url("../fonts/basis-grotesque-light.eot");
+  src: url("../fonts/basis-grotesque-light.eot?#iefix")
+      format("embedded-opentype"),
+    url("../fonts/basis-grotesque-light.woff") format("woff"),
+    url("../fonts/basis-grotesque-light.woff2") format("woff2"),
+    url("../fonts/basis-grotesque-light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Basis Grotesque";
+  src: url("../fonts/basis-grotesque-medium.eot");
+  src: url("../fonts/basis-grotesque-medium.eot?#iefix")
+      format("embedded-opentype"),
+    url("../fonts/basis-grotesque-medium.woff") format("woff"),
+    url("../fonts/basis-grotesque-medium.woff2") format("woff2"),
+    url("../fonts/basis-grotesque-medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Basis Grotesque Off White";
+  src: url("../fonts/basis-grotesque-off-white.eot");
+  src: url("../fonts/basis-grotesque-off-white.eot?#iefix")
+      format("embedded-opentype"),
+    url("../fonts/basis-grotesque-off-white.woff") format("woff"),
+    url("../fonts/basis-grotesque-off-white.woff2") format("woff2"),
+    url("../fonts/basis-grotesque-off-white.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Basis Grotesque";
+  src: url("../fonts/basis-grotesque-regular.eot");
+  src: url("../fonts/basis-grotesque-regular.eot?#iefix")
+      format("embedded-opentype"),
+    url("../fonts/basis-grotesque-regular.woff") format("woff"),
+    url("../fonts/basis-grotesque-regular.woff2") format("woff2"),
+    url("../fonts/basis-grotesque-regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}

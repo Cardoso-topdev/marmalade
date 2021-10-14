@@ -1,0 +1,51 @@
+.text-block {
+  margin-right: 0;
+  margin-left: 0;
+  margin-bottom: 60px;
+  color: $text-color;
+  font-size: 2.2rem;
+  font-weight: 300;
+  max-width: 900px;
+
+  @include respond-to(sm) {
+    margin-bottom: 100px;
+    font-size: 2.5rem;
+  }
+
+  @include respond-to(md) {
+    margin-bottom: 130px;
+  }
+
+  @include respond-to(lg) {
+    margin-bottom: 180px;
+  }
+
+  &--center {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &--margin {
+    margin-top: 60px;
+
+    @include respond-to(sm) {
+      margin-top: 100px;
+    }
+
+    @include respond-to(md) {
+      margin-top: 130px;
+    }
+
+    @include respond-to(lg) {
+      margin-top: 180px;
+    }
+  }
+
+  h2 {
+    @extend .heading-md;
+  }
+
+  p {
+    margin-bottom: 1.5em;
+  }
+}

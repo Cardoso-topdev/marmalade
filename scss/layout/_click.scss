@@ -1,0 +1,130 @@
+.click {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-weight: 500;
+  color: $text-color;
+  padding-top: 100px;
+
+  @include respond-to(sm) {
+    padding-bottom: 100px;
+  }
+
+  @include respond-to(md) {
+    padding-top: 200px;
+  }
+
+  @include when-inside('.single-p') {
+    padding-bottom: 60px;
+
+    @include respond-to(sm) {
+      padding-bottom: 100px;
+
+      &::after {
+        position: absolute;
+        bottom: 0;
+        left: 20px;
+        right: 20px;
+        height: 3px;
+        background-color: #000;
+        content: '';
+      }
+    }
+
+    @include respond-to(lg) {
+      &::after {
+        left: 30px;
+        right: 30px;
+      }
+    }
+
+    @include respond-to(xxl) {
+      &::after {
+        left: 3%;
+        right: 3%;
+      }
+    }
+
+    @include when-inside('.theme-dark') {
+      &::after {
+        display: none;
+      }
+    }
+  }
+
+  @include when-inside('.single-p--blue') {
+    &::after {
+      display: none;
+    }
+  }
+
+  @include when-inside('.about') {
+    // color: var(--text-color);
+    color: $text-color-light;
+    mix-blend-mode: difference;
+    border-top: 3px solid #ffffff;
+
+    p {
+      a {
+        &::before {
+          background-color: $text-color-light;
+        }
+      }
+    }
+  }
+
+  p {
+    @media (max-width: 767px) {
+      font-size: 3.2rem;
+    }
+    a {
+      @extend .link;
+      color: inherit;
+      font-weight: 400;
+
+      &::before {
+        background-color: $text-color;
+      }
+    }
+  }
+
+  &__img {
+    margin-top: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include transition;
+
+    &:hover,
+    &:focus {
+      transform: translateY(-5px);
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+  }
+
+  &__icon {
+    &--base {
+      display: none;
+    }
+
+    &--dark {
+      display: block;
+    }
+
+    @include when-inside('.theme-dark') {
+      &--dark {
+        display: none;
+      }
+
+      &--base {
+        display: block;
+      }
+    }
+  }
+}

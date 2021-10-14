@@ -1,0 +1,54 @@
+.shapes {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+
+  // @include when-inside('.theme-dark') {
+  //   display: none;
+  // }
+
+  &--dark {
+    display: none;
+
+    @include when-inside('.theme-dark') {
+      display: block;
+    }
+  }
+
+  &__square,
+  &__circle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width: 50vw;
+    height: 50vw;
+    mix-blend-mode: darken;
+
+    @include when-inside('.theme-dark') {
+      mix-blend-mode: difference;
+    }
+
+    @include respond-to(sm) {
+      width: 25vw;
+      height: 25vw;
+    }
+  }
+
+  &__square {
+    left: auto;
+    right: 0;
+    z-index: 2;
+    background-color: $light-blue;
+    // background-color: #03005f;
+  }
+
+  &__circle {
+    border-radius: 50%;
+    background-color: $red-color;
+  }
+}

@@ -1,0 +1,46 @@
+.landing {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: $dark-color;
+  z-index: 200;
+  opacity: 0;
+  visibility: hidden;
+
+  &.is-active {
+    opacity: 1;
+    visibility: visible;
+    animation: removeLanding 1s 2s forwards;
+  }
+
+  svg {
+    margin-bottom: 30px;
+    width: 83px;
+    height: 21px;
+    fill: #fff;
+  }
+
+  h1 {
+    color: #ffffff;
+    font-size: 2.3rem;
+    font-weight: 400;
+  }
+
+  @include respond-to(sm) {
+    svg {
+      margin-bottom: 60px;
+      width: 133px;
+      height: 33px;
+    }
+
+    h1 {
+      font-size: 4.1rem;
+    }
+  }
+}

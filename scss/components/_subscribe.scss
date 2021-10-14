@@ -1,0 +1,107 @@
+.subscribe {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 70px 35px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: $green-color;
+  transform: translateY(100%);
+  @include transition;
+
+  &.is-opened {
+    transform: translateY(0);
+  }
+
+  .gform_confirmation_wrapper {
+    padding-bottom: 15px;
+    width: 80vw;
+    text-align: center;
+    border-bottom: 1px solid #fff;
+  }
+
+  .validation_error {
+    display: none;
+  }
+
+  .validation_message {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+  }
+
+  .gform_ajax_spinner {
+    position: absolute;
+    top: calc(50% - 20px);
+    right: 0;
+    transform: translateY(-50%);
+    border: 4px solid rgba($red-color, 0.3);
+    border-left: 4px solid rgba($red-color, 0.7);
+    animation: spinner 1.1s infinite linear;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+  }
+
+  form {
+    position: relative;
+    // padding-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80vw;
+    font-size: 2.2rem;
+    // border-bottom: 1px solid #fff;
+
+    ul {
+      list-style: none;
+    }
+
+    .gfield_label {
+      display: none;
+    }
+  }
+
+  .gform_body {
+    width: 100%;
+  }
+
+  input {
+    margin-bottom: 30px;
+    padding: 5px;
+    padding-bottom: 15px;
+    width: 100%;
+    color: #fff;
+    font-family: $text-font-stack;
+    font-size: 2.2rem;
+    text-align: center;
+    border: none;
+    background: none;
+    outline: none;
+    border-bottom: 1px solid #fff;
+
+    &::placeholder {
+      color: #fff;
+    }
+  }
+
+  .gform_validation_container {
+    @extend .visually-hidden;
+  }
+
+  input[type='submit'] {
+    margin-bottom: 0;
+    font-size: 20px;
+    padding: 4px 10px;
+    font-family: $text-font-stack;
+    color: #fff;
+    background: none;
+    outline: none;
+    border: 1px solid #fff;
+    cursor: pointer;
+  }
+}

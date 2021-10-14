@@ -1,0 +1,34 @@
+.single-p {
+  &__heading {
+    padding-top: 175px;
+    padding-bottom: 50px;
+    font-family: "Mabry Pro";
+    font-size: 2.2rem;
+    font-weight: 400;
+    line-height: 1.15;
+
+    h1 {
+      font-weight: 500;
+      font-size: inherit;
+      font-size: 3rem;
+      @include respond-to(sm) {
+        font-size: 4.8rem;
+      }
+    }
+
+    @include respond-to(sm) {
+      padding-top: 320px;
+      padding-bottom: 150px;
+      font-size: 4.8rem;
+    }
+
+    // @include when-inside('.single-p--blue') {
+    //   color: $text-color-light;
+    //   background-color: $dark-blue;
+    // }
+  }
+
+  &__inner {
+    background-color: #fff;
+  }
+}

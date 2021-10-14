@@ -1,0 +1,839 @@
+.page-template-page-contact{
+  .page-header{
+    display: none;
+  }
+
+  .page-wrapper{
+    padding-bottom: 0px !important;
+  }
+
+  .page-footer{
+    display: none;
+  }
+}
+
+#client-form{
+  position: relative;
+  z-index: 2;
+  background-color: #FBFBFB;
+
+  p{
+    color: black;
+  }
+}
+
+.form-header{
+  position: relative;
+  z-index: 2;
+  background-color: #F44545;
+
+  &__inner{
+    padding-top: 100px;
+
+    @include respond-to(sm){
+      padding-top: 100px;
+    }
+    
+
+    h1{
+      font-family: 'Canela Web';
+      font-weight: 400;
+      font-size: 39px;
+    }
+
+    p{
+      font-size: 14px;
+      max-width: 705px;
+      padding-bottom: 32px;
+      padding-top: 15px;
+    }
+  }
+
+  &__flex{
+    display: flex;
+    justify-content: space-between;
+
+    svg{
+      margin-top: 17px;
+    }
+  }
+}
+
+.form-wrap{
+  position: relative;
+  z-index: 2;
+  background-color: #FBFBFB;
+
+  input, textarea, select{
+    font-size: 14px;
+    background-color: #FBFBFB;
+    width: 100%;
+  }
+
+  select{
+      -moz-appearance:none; /* Firefox */
+      -webkit-appearance:none; /* Safari and Chrome */
+      appearance:none;
+  }
+
+  select:after{
+    content: '<>';
+    font: 17px "Consolas", monospace;
+    color: #333;
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+    right: 11px;
+    /*Adjust for position however you want*/
+    
+    top: 18px;
+    padding: 0 0 2px;
+    border-bottom: 1px solid #999;
+    /*left line */
+    
+    position: absolute;
+    pointer-events: none;
+  }
+
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover, 
+  input:-webkit-autofill:focus, 
+  input:-webkit-autofill:active  {
+      -webkit-box-shadow: 0 0 0 30px #FBFBFB inset !important;
+  }
+
+  input:focus,
+  select:focus,
+  textarea:focus,
+  button:focus {
+      outline: none;
+  }
+
+  label{
+    color: black;
+  }
+
+  .p-light{
+    font-size: 14px;
+    color: #000;
+    opacity: .35;
+
+    p{
+      font-size: 14px;
+    }
+  }
+
+  p, label{
+    font-size: 18px;
+  }
+
+  h2{
+    color: black;
+    font-family: 'Canela Web';
+    font-weight: 400;
+    font-size: 30px;
+    width: 100%;
+    margin-bottom: 47px;
+  }
+
+
+
+  ::placeholder{
+    font-size: 14px; 
+    opacity: 0.35; 
+  }
+}
+
+.form-grid-two{
+  display: grid;
+  grid-template-columns: repeat(1,minmax(0,1fr));
+  column-gap: 50px;
+
+
+  @include respond-to(sm){
+    grid-template-columns: repeat(2,minmax(0,1fr));
+  }
+}
+
+.form-grid-three{
+  display: grid;
+  grid-template-columns: repeat(1,minmax(0,1fr));
+  column-gap: 50px;
+
+  @include respond-to(md){
+    grid-template-columns: repeat(3,minmax(0,1fr));
+  }
+}
+
+.notice-wrap{
+  position: relative;
+  grid-row-start: 1;
+  grid-column: span 1;
+
+  @include respond-to(md){
+    grid-row-start: auto;
+    grid-column: span 1;
+  }
+  
+}
+
+.remove-project{
+  color: #F44545 !important;
+  text-decoration: underline;
+  margin-left: 20px;
+  display: none;
+
+  &:hover{
+    cursor: pointer;
+  }
+}
+
+
+
+.add-project{
+  color: black;
+  text-decoration: underline;
+
+  &:hover{
+    cursor: pointer;
+  }
+}
+
+.js-project-added{
+  max-height: 0px;
+  overflow: hidden;
+  transition: 0.4s;
+
+  &.active{
+    max-height: 200px;
+  }
+}
+
+.notice{
+  background-color: #EEEEEE;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+
+  @include respond-to(md){
+    position: absolute;
+    margin-bottom: 0px;
+    flex-wrap: nowrap;
+  }
+
+  &__left{
+    margin-right: 20px;
+  }
+
+  p{
+    margin-bottom: 10px;
+  }
+}
+
+.input-row{
+  display: flex;
+  flex-direction: column;
+}
+
+.form-btn{
+  background-color: #F24F4F;
+  border: solid #F24F4F;
+  border-width: 1px;
+
+  p{
+    color: white;
+  }
+
+  &:hover{
+    background-color: #FBFBFB;
+    cursor: pointer;
+    transition: 0.4s;
+
+    p{
+      color: #F24F4F !important;
+    }
+
+    svg{
+      path{
+        stroke: #F24F4F;;
+      }
+    }
+  }
+
+  &__inner{
+    display: flex;
+    align-items: center;
+    padding: 9px 22px;
+
+    p{
+      margin: 0;
+      color: white !important;
+      margin-right: 10px;
+    }
+  }
+}
+
+.form-general{
+  position: relative;
+  z-index: 2;
+  background-color: #FBFBFB;
+  padding-top: 50px;
+
+  &__add-remove-btns{
+    display: flex;
+    
+  }
+
+  label{
+    color: black;
+    padding-bottom: 8px;
+    font-size: 18px;
+  }
+
+  input{
+    border: none;
+    border-bottom: 1px solid #00000036;
+    border-width: 1px;
+    padding-bottom: 10px;   
+    padding-left: 3px; 
+    margin-bottom: 40px;
+    width: 100%;
+  }
+}
+
+.checkbox-row{
+  input{
+    margin-bottom: 20px;   
+    border-radius: 5px;
+  }
+
+  .checkbox-label {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    font-size: 14px;
+    padding-top: 5px;
+    margin-top: 14px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  .checkbox-label input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    border-radius: 5px;
+  }
+
+  .checkbox-label:hover input ~ .checkmark {
+    background-color: #ccc;
+  }
+
+  .checkbox-label input:checked ~ .checkmark {
+    background-color: #F24F4F;;
+  }
+
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+
+  .checkbox-label input:checked ~ .checkmark:after {
+    display: block;
+  }
+
+  .checkbox-label .checkmark:after {
+    left: 10px;
+    top: 7px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+
+
+
+
+}
+
+
+
+
+.form-cutterguides{
+  background-color: #FBFBFB;
+  padding-top: 65px;
+
+  @include respond-to(sm){
+    padding-top: 207px;
+  }
+
+  .form-grid-two{
+  
+    @include respond-to(sm){
+      grid-template-columns: repeat(1,minmax(0,1fr));
+    }
+
+    @include respond-to(md){
+      grid-template-columns: repeat(2,minmax(0,1fr));
+    }
+  }
+
+  h2{
+    margin-bottom: 50px;
+  }
+
+  &__left{
+    p:first-of-type{
+      margin-bottom: 16px;
+    }
+  }
+
+  &__drag-n-drop{
+    border: dashed #00000054;
+    border-width: 1px;
+    height: calc(100% - 89px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    input{
+      color: black;
+    }
+
+    span{
+      color: black;
+    }
+
+  }
+
+  &__right{
+    .p-light{
+      max-width: 300px;
+    }
+  }
+  
+  &__selects{
+    display: grid;
+    grid-template-columns: repeat(2,minmax(0,1fr));
+    margin-top: 20px;
+    margin-bottom: 23px;
+  }
+
+  &__selects--narrow{
+    grid-template-columns: 0.5fr 1.5fr
+  }    
+
+  .notice{
+    position: relative;
+    margin-top: 30px;
+  }
+
+  .notice__left{
+    width: 50%;
+  }
+
+  .notice__right{
+    margin-left: auto;
+    margin-right: auto;
+
+    p{
+      @include respond-to(md){
+        max-width: 380px;
+      }
+    }
+  }
+
+  .form-btn{
+    margin-top: 40px;
+  }
+
+  label{
+    font-size: 14px;
+  }
+
+  #product-uploads{
+    margin-top: 20px;
+  }
+
+  .codedropz-upload-container{
+    height: 266px;
+  }
+}
+
+
+
+.form-print{
+  background-color: #FBFBFB;
+  padding-top: 42px;
+
+  @include respond-to(sm){
+    padding-top: 75px;
+  }
+
+  h2{
+    margin-bottom: -9px;
+  }
+
+  p{
+    margin-bottom: 15px;
+  }
+
+  textarea{
+    margin-bottom: 44px;
+    height: 168px;
+    padding: 10px 10px;
+  }
+
+  select{
+    margin-bottom: 25px;
+    width: 100%;
+    font-size: 14px;
+    padding: 10px 5px;
+  }
+
+  .notice{
+    position: relative;
+    margin-top: 30px;
+    padding: 10px 19px;
+    max-width: 757px;
+    flex-wrap: nowrap;
+
+    p{
+      font-size: 14px;
+      margin-bottom: 0px;
+    }
+
+    &__right{
+        display: flex;
+        align-items: center;
+    }
+  }
+
+  .form-grid-three{
+    padding-top: 50px;
+  }
+
+  .form-cutterguides__selects{
+    margin: 0px;
+    margin-bottom: 25px;
+  }  
+}
+
+
+
+
+.form-samples{
+  background-color: #FBFBFB;
+  padding-top: 38px;
+
+  @include respond-to(sm){
+    padding-top: 100px;
+  }
+
+  input{
+    border:  solid #707070;
+    border-width: 1px;
+    padding: 9px 9px;
+  }
+
+  li, p, ul{
+    margin-bottom: 20px;
+    list-style-position: outside;
+  }
+
+  li{
+    color: black;
+    font-size: 14px;
+  }
+
+  .codedropz-upload-container{
+    height: 243px;
+  }
+}
+
+.form-next-steps{
+  background-color: #FBFBFB;
+  padding-top: 100px;
+  padding-bottom: 56px;
+
+  li, ul{
+    margin-bottom: 20px;
+    list-style-position: outside;
+  }
+
+  @include respond-to(sm){
+    padding-bottom: 75px;
+  }
+
+  &__header{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .form-btn{
+    margin-top: 60px !important;
+    margin-bottom: 60px !important;
+  }
+
+  .submit-btn{
+    margin-top: 121px !important;
+  }
+
+  &__row:nth-of-type(2){
+    grid-row-start: 3;
+
+    @include respond-to(md){
+      grid-row-start: auto;
+    }
+  }
+
+  .notice{
+    display: block;
+    margin-top: 5px;
+
+    @include respond-to(xl){
+      margin-top: 47px;
+    }
+
+    &__left{
+      display: flex;
+      align-items: center;
+      margin-right: 0px;
+
+      p{
+        margin-bottom: 0px;
+        margin-left: 20px;
+        margin-top: 4px;
+      }
+    }
+
+    &__right{
+      margin-top: 20px;
+
+      p{
+        font-size: 14px;
+        margin-bottom: 0px;
+      }
+    }
+  }
+
+  li, p, ul{
+    margin-bottom: 20px;
+
+  }
+
+  li{
+    color: black;
+    font-size: 14px;
+  }
+
+  .form-btn{
+    display: table;
+    margin: auto;
+    margin-bottom: 40px;
+    margin-top: 40px;
+
+    p{
+      margin-bottom: 0px;
+    }
+  }
+
+  label{
+    color: black;
+    padding-bottom: 20px;
+    font-size: 18px;
+  }
+
+  input{
+    border: none;
+    border-bottom: 1px solid #00000036;
+    border-width: 1px;
+    padding-bottom: 10px;   
+    padding-left: 3px; 
+    margin-bottom: 40px;
+  }
+}
+
+
+.form-sucsess{
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #F44545;
+  transform: translateX(100%);
+  transition: 0.4s;
+
+  &.active{
+    transform: translateX(0%);
+  }
+
+  &__inner{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+
+    h1{
+      color: white;
+      font-size: 55px;
+      font-weight: 500;
+      margin-bottom: 20px;
+      font-family: 'Canela Web';
+    }
+
+
+    p{
+      color: white;
+      max-width: 500px;
+      text-align: center;
+      font-size: 18px;
+    }
+  }
+}
+
+
+//dragndrop general mods
+
+.codedropz-upload-handler{
+  border: 2px dashed #00000026;
+  border-radius: 0px;
+}
+
+.codedropz-upload-inner{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.cd-upload-btn{
+  font-size: 14px;
+  color: #000000;
+  opacity: 0.35;
+}
+
+.dnd-upload-status .dnd-upload-details .name span{
+  font-size: 14px;
+
+
+}
+
+.dnd-upload-status .dnd-upload-details .name em{
+  font-weight: 400;
+  font-style: normal;
+  font-size: 14px;
+  color: black;
+}
+
+.dnd-upload-status .dnd-upload-details .dnd-progress-bar span{
+  font-size: 0px;
+  background: #4caf50ad;
+}
+
+.dnd-upload-status .dnd-upload-details .dnd-progress-bar{
+  border-radius: 0;
+  height: 3px;
+}
+
+.dnd-upload-status .dnd-upload-image{
+  width: 26px;
+  height: 26px;
+  border: none;
+  margin-top: 5px;
+}
+
+.dnd-upload-status .dnd-upload-details .remove-file span:after{
+  margin-top: 3px;
+}
+
+.codedropz-upload-container{
+
+  svg{
+    transition: 0.4s;
+
+    &:hover{
+      cursor: pointer;
+    }
+  }
+
+  &.drag{
+
+
+    svg{
+      transform: scale(1.1);
+    }
+  }
+}
+
+.form-error{
+  label{
+    color: #f24f4f !important;
+  }
+
+  input{
+    border-color: #f24f4f !important;
+  }
+  
+
+  ::placeholder { 
+    color: #f24f4f !important;
+    opacity: 1;
+  }
+}
+
+.custom-drop-down{
+  width: 100%;
+
+  overflow: hidden;
+  background: no-repeat #FBFBFB;
+  background-position: 98% 12px;
+
+
+  select{
+    -webkit-appearance:none;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    background: transparent;
+    overflow: hidden;
+    color: #00000035;
+  }
+
+  option{
+    color: black;
+  }
+}
+
+.small-textarea{
+  textarea{
+    height: 39px;
+  } 
+}
+
+

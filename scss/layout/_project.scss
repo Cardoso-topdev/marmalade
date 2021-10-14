@@ -1,0 +1,733 @@
+.project {
+  position: relative;
+  padding-bottom: 1px;
+  z-index: 5;
+  background: $dark-color;
+
+  @include respond-to(sm) {
+    padding-bottom: 320px;
+    > *:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+  }
+
+  &--reverse {
+    background-color: #fff;
+  }
+
+  &__header {
+    position: relative;
+    padding: 150px 35px;
+    min-height: 320px;
+    text-align: center;
+
+    .medium--upper {
+      margin-top: 15px;
+      color: $dark-grey;
+    }
+
+    .heading--md {
+      max-width: 650px;
+    }
+
+    @include respond-to(sm) {
+      padding: 100px 35px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 80vh;
+      height: calc(var(--vh, 1vh) * 80);
+    }
+
+    @include respond-to(md) {
+      max-height: none;
+    }
+
+    @include respond-to(lg) {
+      .heading--md {
+        max-width: 850px;
+      }
+    }
+
+    @include when-inside('.project--reverse') {
+      .heading--md {
+        color: $dark-color;
+      }
+    }
+
+    > a {
+      position: absolute;
+      left: 50%;
+      bottom: 40px;
+      transform: translateX(-50%);
+      color: #ffffff;
+      font-family: $text-font-stack;
+      font-size: 1.6rem;
+      font-weight: 400;
+      line-height: 1.5;
+      text-decoration: underline;
+      background: none;
+      outline: none;
+      border: none;
+
+      @include respond-to(sm) {
+        font-size: 2.2rem;
+      }
+
+      @include when-inside('.project--reverse') {
+        color: $dark-color;
+      }
+    }
+  }
+
+  &__scroll {
+    position: absolute;
+    left: 50%;
+    bottom: 40px;
+    width: 23px;
+    color: #ffffff;
+    transform: translateX(-50%);
+    border: none;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+
+    @include when-inside('.project--reverse') {
+      color: $dark-color;
+    }
+
+    &.is-visible {
+      transform: translateX(-50%);
+    }
+
+    &:hover,
+    &:focus {
+      transition-duration: 0.3s;
+      transform: translateX(-50%) translateY(5px);
+    }
+
+    svg {
+      width: 100%;
+      fill: currentColor;
+      backface-visibility: hidden;
+    }
+  }
+
+  &__info-btn {
+    position: absolute;
+    left: 50%;
+    bottom: 40px;
+    transform: translateX(-50%);
+    color: #ffffff;
+    font-family: $text-font-stack;
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 1.5;
+    text-decoration: underline;
+    background: none;
+    outline: none;
+    border: none;
+
+    @include respond-to(sm) {
+      font-size: 2.2rem;
+    }
+
+    @include when-inside('.project--reverse') {
+      color: $dark-color;
+    }
+
+    &.is-visible {
+      transform: translateX(-50%);
+    }
+  }
+
+  &__carousel {
+    width: 100%;
+  }
+
+  &__gallery {
+    position: relative;
+    margin-bottom: 80px;
+
+    @include respond-to(sm) {
+      margin-bottom: 100px;
+    }
+  }
+
+  &__gallery-item {
+    position: relative;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    // background-color: $dark-img-bg;
+
+    // @include when-inside('.project--reverse') {
+    //   background-color: $light-img-bg;
+    // }
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      font-family: 'object-fit: cover;';
+    }
+
+    &::before {
+      padding-top: 66.66%;
+      display: block;
+      content: '';
+    }
+  }
+
+  &__embed {
+    padding-bottom: 50px;
+    padding-top: 50px;
+
+    @include respond-to(sm) {
+      padding-top: 150px;
+      padding-bottom: 150px;
+
+      &--video {
+        padding-top: 170px;
+        padding-bottom: 170px;
+      }
+    }
+  }
+
+  &__embed-inner {
+    background-color: #fff;
+
+    @include when-inside('.project--reverse') {
+      background-color: #000;
+    }
+
+    @include respond-to(sm) {
+      padding-top: 115px;
+      padding-bottom: 115px;
+    }
+
+    .container {
+      position: relative;
+      padding-left: 0;
+      padding-right: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      @include respond-to(sm) {
+        max-width: 60%;
+      }
+    }
+
+    @include when-inside('.project__embed--video') {
+      padding-top: 0;
+      padding-bottom: 0;
+      @include respond-to(sm) {
+        padding-top: 170px;
+        padding-bottom: 170px;
+        .container {
+          max-width: 75%;
+        }
+      }
+    }
+
+    video {
+      width: 100%;
+    }
+
+    .embed-container {
+      position: relative;
+      padding-bottom: 56.25%;
+      width: 100%;
+      height: 0;
+      overflow: hidden;
+      max-width: 100%;
+
+      iframe,
+      object,
+      embed {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+      }
+    }
+  }
+
+  &__play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 10;
+    transform: translate(-50%, -50%);
+    width: 75px;
+    height: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: $text-font-stack;
+    font-weight: 300;
+    color: #fff;
+    font-size: 2rem;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    background-color: transparent;
+    outline: none;
+    cursor: pointer;
+    @include transition;
+
+    @include when-inside('iframe.is-autoplay ~') {
+      display: none;
+    }
+
+    @include when-inside('iframe.is-playing ~') {
+      opacity: 0;
+    }
+  }
+
+  &__mute {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    z-index: 10;
+    fill: #fff;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    opacity: 0;
+    @include transition;
+
+    @include when-inside('iframe.is-playing.is-muted ~') {
+      opacity: 0.5;
+    }
+
+    @include when-inside('iframe.is-playing ~') {
+      opacity: 1;
+    }
+  }
+
+  &__intro {
+    margin: 110px auto;
+    padding: 0 20px;
+    max-width: 900px;
+    text-align: center;
+
+    @include respond-to(sm) {
+      margin: 200px auto;
+      padding: 0 35px;
+    }
+
+    @include when-inside('.project--reverse') {
+      .heading--md {
+        color: $dark-color;
+      }
+    }
+  }
+
+  &__img {
+    padding-top: 70px;
+    padding-bottom: 90px;
+    width: 100%;
+
+    // div {
+    // position: relative;
+    // background-color: $dark-img-bg;
+
+    // @include when-inside('.project--reverse') {
+    //   background-color: $light-img-bg;
+    // }
+    // }
+
+    &--centered {
+      margin: 0 auto;
+    }
+
+    img {
+      width: 100%;
+    }
+
+    @include respond-to(sm) {
+      padding-top: 180px;
+      padding-bottom: 180px;
+
+      &--centered {
+        padding-left: 20px;
+        padding-right: 20px;
+        max-width: 80%;
+      }
+    }
+
+    @include respond-to(md) {
+      &--centered {
+        max-width: 60%;
+      }
+    }
+
+    @include respond-to(xl) {
+      &--centered {
+        max-width: 50%;
+      }
+    }
+
+    @include respond-to(xxl) {
+      &--centered {
+        max-width: 45%;
+      }
+    }
+
+    canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      pointer-events: none;
+
+      @include respond-to(md) {
+        pointer-events: all;
+      }
+    }
+
+    @include when-inside('.is-touch') {
+      canvas {
+        display: none;
+      }
+    }
+  }
+
+  &__double {
+    position: relative;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 100%;
+
+    & + .project__website {
+      margin-top: 40px;
+    }
+
+    @include respond-to(sm) {
+      margin-left: auto;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 150px;
+      padding-bottom: 150px;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+
+      &--1 {
+        padding-bottom: 200px;
+      }
+
+      &--2 {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      &--3 {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      & + .project__website {
+        margin-top: 0;
+      }
+    }
+
+    canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      pointer-events: none;
+
+      @include respond-to(md) {
+        pointer-events: all;
+      }
+    }
+
+    @include when-inside('.is-touch') {
+      canvas {
+        display: none;
+      }
+    }
+  }
+
+  &__img-wrap {
+    width: 100%;
+
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+
+    @include respond-to(sm) {
+      @include when-inside('.project__double--1') {
+        &:first-child {
+          margin-bottom: 120px;
+          width: 50%;
+        }
+        &:last-child {
+          width: 33%;
+          display: flex;
+          align-items: flex-end;
+        }
+      }
+
+      @include when-inside('.project__double--2') {
+        &:first-child {
+          margin-bottom: 145px;
+          margin-left: 100px;
+          width: 30%;
+        }
+        &:last-child {
+          width: 60%;
+          align-self: flex-end;
+        }
+      }
+
+      @include when-inside('.project__double--3') {
+        &:first-child {
+          margin-bottom: 180px;
+          width: 60%;
+        }
+        &:last-child {
+          width: 44%;
+          align-self: flex-end;
+        }
+      }
+
+      @include when-inside('.project__triple') {
+        &:first-child {
+          margin-left: 100px;
+          width: 36%;
+        }
+
+        &:nth-child(2) {
+          margin-top: 160px;
+          margin-right: 100px;
+          margin-bottom: 140px;
+          width: 36%;
+        }
+
+        &:nth-child(3) {
+          width: 65%;
+        }
+      }
+    }
+
+    img,
+    picture {
+      width: 100%;
+    }
+
+    @include when-inside('.is-touch') {
+      canvas {
+        display: none;
+      }
+    }
+  }
+
+  &__text {
+    margin: 145px 0;
+    padding: 0 45px;
+    text-align: center;
+
+    @include respond-to(sm) {
+      margin: 220px auto;
+      padding: 0 45px;
+      max-width: 1130px;
+    }
+
+    @include when-inside('.project--reverse') {
+      color: $dark-color;
+    }
+  }
+
+  &__website {
+    padding: 50px 35px;
+
+    @include respond-to(sm) {
+      padding: 170px 35px;
+    }
+
+    button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  &__mockups {
+    margin: 0 auto;
+    padding: 110px 35px;
+    max-width: 1070px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include respond-to(sm) {
+      padding-top: 170px;
+      padding-bottom: 170px;
+      flex-direction: row;
+      justify-content: space-around;
+    }
+    @include respond-to(lg) {
+      justify-content: space-between;
+    }
+
+    img {
+      width: 165px;
+
+      &:not(:last-child) {
+        margin-bottom: 120px;
+      }
+      @include respond-to(sm) {
+        width: 200px;
+
+        &:not(:last-child) {
+          margin-bottom: 0;
+        }
+      }
+
+      @include respond-to(md) {
+        width: 290px;
+      }
+    }
+  }
+
+  &__triple {
+    position: relative;
+    margin-left: -20px;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    width: calc(100% + 40px);
+
+    @include respond-to(sm) {
+      margin-left: auto;
+      padding-top: 150px;
+      padding-bottom: 130px;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      align-items: flex-start;
+    }
+
+    canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      pointer-events: none;
+
+      @include respond-to(md) {
+        pointer-events: all;
+      }
+    }
+
+    @include when-inside('.is-touch') {
+      canvas {
+        display: none;
+      }
+    }
+  }
+  &__more {
+    position: relative;
+    padding-bottom: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include respond-to(sm) {
+      padding-bottom: 150px;
+    }
+  }
+
+  &__container {
+    width: 100%;
+
+    .project {
+      &:first-child {
+        margin-top: 100px;
+
+        @include respond-to(sm) {
+          margin-top: 150px;
+        }
+      }
+
+      &:last-child {
+        &.project--reverse {
+          @include respond-to(sm) {
+            padding-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+
+  &__load {
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    display: inline-block;
+    font-family: $text-font-stack;
+    text-decoration: underline;
+    color: #000;
+    opacity: 0.3;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    @include transition;
+
+    @include respond-to(sm) {
+      margin-top: 150px;
+    }
+
+    &:hover,
+    &:focus {
+      opacity: 1;
+    }
+
+    &.is-disabled {
+      pointer-events: none;
+      opacity: 0.1;
+    }
+  }
+}
+
+.project-wrapper {
+  position: relative;
+  padding-bottom: 1px;
+  z-index: 5;
+  background-color: $dark-color;
+
+  // @include respond-to(sm) {
+  //   padding-bottom: 320px;
+  // }
+
+  > .project {
+    padding-bottom: 0;
+
+    @include respond-to(sm) {
+      padding-bottom: 0;
+    }
+  }
+
+  &.is-reverse {
+    background-color: #fff;
+  }
+}

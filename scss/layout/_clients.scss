@@ -1,0 +1,60 @@
+.clients {
+  position: relative;
+  z-index: 10;
+  margin-bottom: 80px;
+  mix-blend-mode: difference;
+
+  @include respond-to(sm) {
+    margin-bottom: 160px;
+  }
+
+  .subheading {
+    position: relative;
+    z-index: 10;
+    margin-bottom: 40px;
+    font-weight: 500;
+    // color: var(--text-color);
+    mix-blend-mode: difference;
+
+    @include respond-to(sm) {
+      margin-bottom: 100px;
+      font-size: 4rem;
+      font-weight: 500;
+      color: $text-color-light;
+      text-transform: none;
+      letter-spacing: 0;
+    }
+  }
+
+  &__grid {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+
+    li {
+      width: 50%;
+    }
+
+    @include respond-to(sm) {
+      li {
+        margin-bottom: 40px;
+        width: 33.33%;
+      }
+    }
+
+    @include respond-to(md) {
+      li {
+        width: 25%;
+      }
+    }
+
+    @include respond-to(lg) {
+      li {
+        //margin-bottom: 100px;
+        img {
+          padding: 0 25px;
+        }
+      }
+    }
+  }
+}

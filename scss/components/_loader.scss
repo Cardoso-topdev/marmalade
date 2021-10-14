@@ -1,0 +1,31 @@
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1000;
+  transform: translateX(-100%);
+  background-color: $red-color;
+  opacity: 0;
+  visibility: hidden;
+
+  &.is-right {
+    transform: translateX(100%);
+  }
+
+  &.is-active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+    transition: transform 0.3s ease-in-out;
+
+    &.is-hidden {
+      transform: translateX(100%);
+
+      &.is-right {
+        transform: translateX(-100%);
+      }
+    }
+  }
+}

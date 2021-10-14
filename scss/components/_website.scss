@@ -1,0 +1,52 @@
+.website {
+  margin: 0 auto;
+  max-width: 70vw;
+  box-shadow: 0 3px 16px rgba(#000, 0.27);
+
+  @include respond-to(lg) {
+    max-width: 1024px;
+  }
+
+  &__bar {
+    width: 100%;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  &__content {
+    max-height: 39vw;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+
+    @include respond-to(lg) {
+      max-height: 570px;
+    }
+
+    &::-webkit-scrollbar {
+      width: 5px;
+      background-color: $mid-grey;
+
+      @include respond-to(sm) {
+        width: 10px;
+      }
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: $dark-color;
+    }
+
+    img {
+      width: 100%;
+    }
+
+    button {
+      width: 100%;
+      border: none;
+      outline: none;
+      background: none;
+      cursor: pointer;
+    }
+  }
+}

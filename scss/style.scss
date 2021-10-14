@@ -1,0 +1,29 @@
+@charset 'UTF-8';
+/*
+Theme Name: Marmalade
+Theme URI:
+Author: Marmalade | Lattimore and Friends
+Author URI: https://lattimoreandfriends.com/
+Description: Bespoke Wordpress theme for Marmalade
+Text Domain: marmalade
+*/
+
+// 1. Configuration and helpers
+@import 'abstracts/variables', 'abstracts/mixins', 'abstracts/animations';
+
+// 2. Vendors
+@import 'vendor/normalize', 'vendor/slick';
+
+// 3. Base stuff
+@import 'base/base', 'base/fonts', 'base/typography', 'base/helpers';
+
+// 4. Layout-related sections
+@import 'layout/header', 'layout/hero', 'layout/landing', 'layout/intro',
+  'layout/studio', 'layout/specialty', 'layout/testimonials', 'layout/work',
+  'layout/project', 'layout/cover-form', 'layout/footer', 'layout/form';
+
+// 5. Components
+@import 'components/button', 'components/arrows', 'components/filter',
+  'components/contact', 'components/info', 'components/website',
+  'components/subscribe', 'components/related', 'components/copy-block',
+  'components/loader';

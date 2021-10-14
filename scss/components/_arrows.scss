@@ -1,0 +1,65 @@
+.arrows {
+  .slick-arrow {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 20vw;
+    font-size: 0;
+    background: none;
+    outline: none;
+    border: none;
+    z-index: 10;
+  }
+
+  &--full {
+    @include respond-to(lg) {
+      .slick-arrow {
+        width: 50vw;
+      }
+    }
+  }
+
+  .slick-prev {
+    left: 0;
+
+    &:hover,
+    &:focus {
+      cursor: url('../img/cursor-left.svg') 27 17, auto;
+    }
+  }
+
+  .slick-next {
+    right: 0;
+
+    &:hover,
+    &:focus {
+      cursor: url('../img/cursor-right.svg') 27 17, auto;
+    }
+  }
+
+  &__indicators {
+    margin-top: 25px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    fill: #fff;
+    opacity: 0.4;
+
+    @include when-inside('.project--reverse') {
+      fill: #000;
+    }
+
+    @include when-inside('.is-touch') {
+      display: flex;
+
+      @include respond-to(sm) {
+        display: none;
+      }
+    }
+
+    svg {
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+  }
+}

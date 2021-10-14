@@ -1,0 +1,245 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the header of the site/application.
+// -----------------------------------------------------------------------------
+.page-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  padding-top: 22px;
+  padding-bottom: 22px;
+  z-index: 100;
+  @include transition;
+
+  &.is-scrolling {
+    top: -77px;
+  }
+
+  // &.is-scrolling,
+  // &.is-filled {
+  //   background: $dark-color;
+  // }
+  // &--light {
+  // background: #fff;
+
+  // &.is-scrolling {
+  //   background: #fff;
+  // }
+  // }
+
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include respond-to(sm) {
+      justify-content: space-between;
+    }
+  }
+
+  &__logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+
+    @include respond-to(sm) {
+      pointer-events: all;
+    }
+
+    svg {
+      width: 75px;
+      height: 18px;
+      fill: #fff;
+
+      @include when-inside('.page-header--light') {
+        fill: $dark-color;
+      }
+    }
+  }
+
+  &__menu-btn {
+    border: none;
+    outline: none;
+    background-color: initial;
+    pointer-events: all;
+    cursor: pointer;
+
+    @include respond-to(sm) {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      &--home {
+        opacity: 0;
+        animation: toggleHeaderLogo 2s 3s forwards;
+      }
+    }
+  }
+
+  &__link {
+    display: none;
+
+    @include respond-to(sm) {
+      display: block;
+      color: #ffffff;
+      font-family: $text-font-stack;
+      font-size: 2.2rem;
+      font-weight: 400;
+      line-height: 1.5;
+      background: none;
+      outline: none;
+      border: none;
+      cursor: pointer;
+
+      @include when-inside('.page-header--light') {
+        color: $dark-color;
+      }
+    }
+  }
+
+  &__wrap {
+    display: none;
+
+    @include respond-to(sm) {
+      display: flex;
+      align-items: center;
+
+      * {
+        &:not(:last-child) {
+          margin-right: 25px;
+        }
+      }
+    }
+  }
+
+  &__nav-wrap {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
+    max-height: 100vh;
+    padding: 35px 20px;
+    padding-bottom: 70px;
+    // padding-top: 0px;
+    padding-right: 0;
+    background: $red-color;
+    // opacity: 0;
+    transform: translateY(-100vh);
+    transition: all 1s cubic-bezier(0.77, 0, 0.175, 1);
+    overflow-y: auto;
+
+    @include when-inside('.page-header.is-opened') {
+      // top: 0;
+      transform: translateY(0);
+    }
+
+    @include respond-to(sm) {
+      padding-top: 110px;
+      padding-bottom: 100px;
+      height: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      height: 80vh;
+      height: calc(var(--vh, 1vh) * 80);
+      // height: auto;
+
+      @include when-inside('.single-project') {
+        height: 80vh;
+        height: calc(var(--vh, 1vh) * 80);
+      }
+    }
+    @include respond-to(md) {
+      padding: 200px 110px;
+    }
+  }
+
+  &__nav {
+    padding-bottom: 100px;
+    padding-right: 20px;
+    // max-height: calc(100vh - 70px);
+    // overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    a {
+      color: #ffffff;
+      font-size: 1.8rem;
+      font-weight: 400;
+    }
+
+    svg {
+      fill: #fff;
+    }
+
+    ul {
+      min-height: calc(100vh - 250px - 70px - 35px);
+      min-height: calc(var(--vh, 1vh) * 100 - 250px - 70px - 35px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      list-style: none;
+
+      li {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &:not(:last-child) {
+          margin-bottom: 4vh;
+        }
+      }
+
+      a {
+        font-size: 3rem;
+        font-weight: 500;
+      }
+    }
+
+    @include respond-to(sm) {
+      padding-right: 0;
+      padding-bottom: 0;
+      width: 100%;
+      ul {
+        display: none;
+      }
+    }
+  }
+
+  &__close {
+    background: none;
+    outline: none;
+    border: none;
+    @include transition;
+    cursor: pointer;
+    transform: rotate(180deg);
+
+    @include when-inside('.page-header.is-opened') {
+      transform: rotate(0);
+    }
+
+    @include respond-to(sm) {
+      position: absolute;
+      left: 50%;
+      bottom: 40px;
+      transform: translateX(-50%);
+
+      @include when-inside('.page-header.is-opened') {
+        transform: translateX(-50%) rotate(180deg);
+      }
+    }
+    @include respond-to(md) {
+      bottom: 75px;
+    }
+
+    svg {
+      fill: #fff;
+    }
+  }
+}

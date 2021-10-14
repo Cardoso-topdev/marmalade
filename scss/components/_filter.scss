@@ -1,0 +1,54 @@
+.filter {
+  position: relative;
+  z-index: 5;
+  padding-top: 120px;
+  background: #fff;
+
+  @include respond-to(sm) {
+    padding-bottom: 0;
+  }
+
+  ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+
+    li {
+      &:not(:last-child) {
+        margin-right: 25px;
+      }
+    }
+
+    @include respond-to(sm) {
+      justify-content: flex-start;
+
+      li {
+        margin-right: 35px;
+      }
+    }
+  }
+
+  button {
+    color: rgba($dark-color, 0.5);
+    font-size: 1.8rem;
+    font-weight: 400;
+    font-family: $text-font-stack;
+    background: none;
+    outline: none;
+    border: none;
+    cursor: pointer;
+
+    &.filter__current {
+      color: $dark-color;
+    }
+
+    @include respond-to(sm) {
+      font-size: 2.2rem;
+
+      &.filter__current {
+        color: $red-color;
+      }
+    }
+  }
+}

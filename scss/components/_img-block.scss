@@ -1,0 +1,78 @@
+.img-block {
+  position: relative;
+
+  &::before {
+    display: block;
+    content: "";
+  }
+
+  &--portrait {
+    &::before {
+      padding-top: 120%;
+    }
+  }
+
+  &--landscape,
+  &--video {
+    &::before {
+      padding-top: 66.66%;
+    }
+  }
+
+  &--square {
+    &::before {
+      padding-top: 100%;
+    }
+  }
+
+  img,
+  video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    font-family: "object-fit: cover;";
+  }
+
+  &--dekstop {
+    &::before {
+      display: none;
+    }
+
+    img {
+      position: static;
+      height: auto;
+      object-fit: initial;
+      font-family: none;
+    }
+    @include respond-to(sm) {
+      &::before {
+        display: block;
+      }
+
+      img {
+        position: absolute;
+        height: 100%;
+        object-fit: cover;
+        font-family: "object-fit: cover;";
+      }
+    }
+  }
+
+  &--fit {
+    &::before {
+      padding-top: 66.66%;
+    }
+
+    img {
+      width: auto;
+      left: 50%;
+      transform: translateX(-50%);
+      height: 100%;
+      object-fit: initial;
+      font-family: none;
+    }
+  }
+}

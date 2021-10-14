@@ -1,0 +1,96 @@
+.theme-change {
+  position: fixed;
+  top: 50%;
+  right: 10px;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  color: var(--text-color);
+  transform: translateY(-50%) rotate(180deg);
+  cursor: pointer;
+
+  @include respond-to(xxl) {
+    right: 20px;
+  }
+
+  // @include when-inside('.page-header--light') {
+  //   color: $text-color-light;
+  // }
+
+  &__btn {
+    position: relative;
+    @extend .link;
+    color: inherit;
+    font-family: $text-font-stack;
+    font-size: 1.8rem;
+    font-weight: 400;
+    line-height: 1;
+    white-space: nowrap;
+    border: none;
+    outline: none;
+    writing-mode: vertical-rl !important;
+    text-orientation: mixed !important;
+    background-color: transparent;
+    text-transform: uppercase;
+
+    &::before {
+      left: 0;
+      bottom: auto;
+      top: 50%;
+      width: 2px;
+      height: 0;
+      transform: translateY(-50%);
+    }
+
+    &--light {
+      pointer-events: none;
+
+      &::before {
+        width: 2px;
+        height: 100%;
+      }
+    }
+
+    @include when-inside('.theme-dark') {
+      &--dark {
+        pointer-events: none;
+
+        &::before {
+          width: 2px;
+          height: 100%;
+        }
+      }
+
+      &--light {
+        pointer-events: all;
+
+        &::before {
+          width: 2px;
+          height: 0;
+        }
+      }
+    }
+
+    &:hover,
+    &:focus {
+      &::before {
+        width: 2px;
+        height: 100%;
+      }
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 30px;
+
+      &::after {
+        position: absolute;
+        bottom: -17px;
+        left: 50%;
+        transform: translateX(-50%);
+        content: '|';
+      }
+    }
+  }
+}
